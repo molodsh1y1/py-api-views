@@ -137,3 +137,13 @@ class ActorDetail(
 
     def delete(self, request, *args, **kwargs) -> Response:
         return self.destroy(request, *args, **kwargs)
+
+
+class CinemaHallList(generics.ListCreateAPIView):
+    queryset = CinemaHall.objects.all()
+    serializer_class = CinemaHallSerializer
+
+
+class CinemaHallDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = CinemaHall.objects.all()
+    serializer_class = CinemaHallSerializer
